@@ -1,0 +1,53 @@
+import time
+import pyautogui as pg
+import keyboard
+
+
+locations = [
+    (305, 318),  # Search Bar
+    (347, 323),  # Search Button
+    (608, 726),  # Most Recent Transaction (DOUBLE CLICK)
+    (162, 655),  # Item Box
+    (1367, 882), # Bottom Tax Box
+    (1137, 499), # Merriam, KS Rate
+    (1462, 581), # Rep Box
+    (1803, 651), # Upper Tax Box (DOUBLE CLICK)
+    (1732, 739), # Taxable Sales
+    (1648, 647), # Rate Box (TRIPLE CLICK)
+    (1403, 1056), # Save and Close
+    (820, 358), # Yes
+    (801, 450), # Yes (Rep)
+    (347, 323)  # Clear Search Box
+]
+
+names = [
+    
+]
+
+time.sleep(5)
+
+for name in names:
+    for i, loc in enumerate(locations):
+            if i == 0:
+            pg.typewrite(name, interval=0.1)
+            time.sleep(2)
+            pg.press('enter')   
+            
+            if i == 2:
+            pg.doubleClick(loc)
+            time.sleep(0.5) 
+     
+        elif i == 7:
+            pg.doubleClick(loc)
+            time.sleep(0.5)
+            time.sleep(5)
+        elif i == 9:
+            pg.tripleClick(loc)
+            time.sleep(5)
+        else:
+            pg.click(loc)
+            time.sleep(5)
+            
+
+            
+    print(f"Clicked locations for {name}")
