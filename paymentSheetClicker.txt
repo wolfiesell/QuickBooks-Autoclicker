@@ -2,7 +2,7 @@ import time
 import pyautogui as pg
 import keyboard
 
-
+# These locations on the screen can change depending on if people move around the boxes. I'll upload a demo on YT soon
 locations = [
     (305, 318),  # Search Bar
     (347, 323),  # Search Button
@@ -21,11 +21,13 @@ locations = [
 ]
 
 names = [
-    
+    # Format: "Last, First"
 ]
 
+#To switch from CMD to the QB window.
 time.sleep(5)
 
+# This will just click the necessary locations for every name
 for name in names:
     for i, loc in enumerate(locations):
             if i == 0:
@@ -49,5 +51,5 @@ for name in names:
             time.sleep(5)
             
 
-            
+    # If something messes up ik where it left off        
     print(f"Clicked locations for {name}")
